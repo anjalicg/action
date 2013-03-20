@@ -5,25 +5,45 @@ def factorial(n)
   end
     
 end
+  
+  def euclid(n1,n2,cost)
+    if(n1==n2) then return n1,cost
+      cost+=1
+    elsif(n1<n2) then
+      cost+=1
+      euclid(n2-n1, n1,cost)
+    elsif(n2<n1)
+      cost+=1
+      euclid(n1-n2, n2,cost)
+    end
+      
+  end
+  
   #puts  factorial(5)
   #puts  factorial(0)
  
 def fibonacci(n)
-  if (n==1) then return 1;
-  elsif (n==0) then return 0;
-  else return fibonacci(n-1)+fibonacci(n-2);
+  if (n==1) then 
+    
+    return 1;
+  elsif (n==0) then 
+    
+    return 0;
+  else 
+    cost+=1
+    return (fibonacci(n-1)+fibonacci(n-2));
   end
     
 end
 
-  for i in 0..50
+  for i in 0..10
     #benchmark here
-    puts fibonacci(i)
+    puts "Cost and number #{fibonacci(i,0)[1]}, #{fibonacci(i,0)[0]}"
   end
+   
+    puts "GCD is:#{euclid(2100,105,0)}"
   
 
-#fibonaci
-#factorial
 # golden ratio?
 #Euclid's GCD algorithm
 #Dijkstra's GCD algorithm
