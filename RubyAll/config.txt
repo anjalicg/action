@@ -1,0 +1,3 @@
+a=b
+path=test
+config = ${a}
